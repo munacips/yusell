@@ -1,0 +1,73 @@
+html,body{
+    margin: 0;
+    font-size: 20px;
+}
+.home-top{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid grey;
+    padding: 1em;
+}
+.btn{
+    padding: 3px;
+    margin: 1px;
+    border: 2px solid grey;
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+}
+.btn:hover{
+    background-color: grey;
+    color: white;
+}
+input[name="query" i] {
+    appearance: auto;
+    box-sizing: border-box;
+    padding: 7px 7px;
+    border: 1px solid grey;
+    border-radius: 1em;
+}
+.home{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.stuff{
+    width: 70vw;
+    padding-left: 1em;
+}
+.categories{
+    width: 30vw;
+}
+.category:hover{
+    color: grey;
+    font-size: 18px;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.detailspics{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.pic-container{
+    width: 30vw;
+    height: 30vw;
+}
+.pic-container img{
+    width: inherit;
+    height: inherit;
+}

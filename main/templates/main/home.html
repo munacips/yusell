@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+{% load static %}
+    <div class="home">
+        <div class="categories">
+            <h3>Categories</h3>
+            {% if not categories %}
+                <h4><i>No results</i></h4>
+            {% endif %}
+            {% for category in categories %}
+                <div class="category" onclick="location.href='/category/{{category.id}}'">
+                    <span>{{category}}</span> <span style="float: right;">˅</span>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="stuff">
+            <h3>{{category}} Collection</h3>
+            <div class="grid">
+                {% if not items %}
+                    <h4><i>No results</i></h4>
+                {% endif %}
+                {% for item in items %}
+                    <div class="item">
+                        <div style="width: 100%; height: 310px;" onclick="location.href='/details/{{item.id}}'">
+                            <img src="{{MEDIA_URL}}{{item.item_pic.url}}" alt="{{item_name}} {{item.price}}">
+                        </div><br>
+                        <span><b>{{item.item_name}}</b> ${{item.price}} <a href="/details/{{item.id}}">Details</a></span><br>
+                        <a href="addtocart/{{item.id}}" class="btn">Add to cart</a><br><br>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

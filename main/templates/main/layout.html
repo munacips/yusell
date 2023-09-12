@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuSell</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {% load static %}
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+</head>
+<body>
+    <nav class="home-top">
+        <span>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{searchform}}
+        </form>
+        </span>
+        <span style="display: flex; flex-direction: row;"> <a href="/viewcart" class="btn">Cart({{cartlen}})</a>  <a href="" class="btn">Check Out</a></span>
+    </nav>
+    <h1 onclick="location.href='/'">YuSell.</h1>
+    {% if search == True %}
+        <h3><i>search results</i></h3>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+
+    <div>
+        {% for item in cart_items %}
+            <div>
+                {{item.product.item_name}}
+                {{item.product.item_name}} <br>
+                ${{item.product.price}}
+                <a href="/remove/{{item.product.id}}">remove from cart</a>
+            </div>
+        {% endfor %}
+
+        <h3>Total price : ${{total_price}}</h3>
+    </div>
+
+{% endblock %}

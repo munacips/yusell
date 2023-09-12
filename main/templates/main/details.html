@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+    <div class="detailspics">
+        {% for pic in pics %}
+            <div class="pic-container" onclick="location.href='{{MEDIA_URL}}{{pic.item_pic.url}}'">
+                <img src="{{MEDIA_URL}}{{pic.item_pic.url}}" alt="{{item.item_name}}">
+            </div>
+        {% endfor %}
+    </div>
+    <div class="description">
+        <h2>{{item.item_name}}</h2>
+        <h3>${{item.price}}</h3>
+        <br>
+        <a href="" class="btn">Add to cart</a><br><br>
+        <span>
+            {{item.description}}
+        </span>
+        <br><br>
+        <a href="" class="btn">Add to cart</a>
+    </div>
+{% endblock %}
